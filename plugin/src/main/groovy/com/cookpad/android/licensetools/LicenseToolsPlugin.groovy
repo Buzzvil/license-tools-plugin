@@ -58,12 +58,14 @@ class LicenseToolsPlugin implements Plugin<Project> {
                 notInDependencies.each { libraryInfo ->
                     project.logger.warn("- artifact: ${libraryInfo.artifactId}\n")
                 }
+                return
             }
             if (licensesNotMatched.size() > 0) {
                 project.logger.warn("# Licenses not matched with pom.xml in dependencies:")
                 licensesNotMatched.each { libraryInfo ->
                     project.logger.warn("- artifact: ${libraryInfo.artifactId}\n  license: ${libraryInfo.license}")
                 }
+                return
             }
             throw new GradleException("checkLicenses: missing libraries in ${ext.licensesYaml}")
         }
