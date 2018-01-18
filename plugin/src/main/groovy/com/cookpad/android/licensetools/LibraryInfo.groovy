@@ -78,7 +78,7 @@ public class LibraryInfo implements Comparable<LibraryInfo> {
         if (notice) {
             return notice;
         } else if (!copyrightHolder) {
-            return null;
+            return "";
         } else {
             return buildCopyrightStatement(copyrightHolder)
         }

@@ -11,7 +11,7 @@ public class Templates {
     static final SimpleTemplateEngine templateEngine = new SimpleTemplateEngine()
 
     public static String buildLicenseHtml(LibraryInfo library) {
-        assertLicenseAndStatement(library)
+        assertLicense(library)
 
         def templateFile = "template/licenses/${library.normalizedLicense}.html"
         return templateEngine.createTemplate(readResourceContent(templateFile)).make([
@@ -19,11 +19,8 @@ public class Templates {
         ])
     }
 
-    public static void assertLicenseAndStatement(LibraryInfo library) {
+    public static void assertLicense(LibraryInfo library) {
         if (!library.license) {
-            throw new NotEnoughInformationException(library)
-        }
-        if (!library.copyrightStatement) {
             throw new NotEnoughInformationException(library)
         }
     }
