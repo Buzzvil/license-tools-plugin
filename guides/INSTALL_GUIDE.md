@@ -25,6 +25,7 @@ git checkout buzzvil
 bulidscript {
     repositories {
         mavenLocal() // local repository에 라이브러리가 있으면 먼저 사용하도록 앞에 명시
+        jcenter() // license-tools-plugin의 dependency를 위해 추가
         ...
     }
 
@@ -34,7 +35,12 @@ bulidscript {
 }
 
 apply plugin: 'com.cookpad.android.licensetools'
+
 ...
+
+licenseTools {
+    ignoredGroups = ['com.buzzvil.buzzscreen.ext'] // 이 그룹을 무시하게 하지 않으면 에러가 발생함
+}
 ```
 
 2. gradle을 새로고침합니다.
