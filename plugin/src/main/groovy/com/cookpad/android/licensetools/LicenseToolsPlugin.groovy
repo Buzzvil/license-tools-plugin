@@ -181,7 +181,7 @@ class LicenseToolsPlugin implements Plugin<Project> {
                 libraryInfo.url = libraryInfo.url ?: o.url
             }
             try {
-                content.append(Templates.buildLicenseHtml(libraryInfo));
+                content.append(Templates.buildLibraryHtml(libraryInfo));
             } catch (NotEnoughInformationException e) {
                 noLicenseLibraries.add(e.libraryInfo)
             }

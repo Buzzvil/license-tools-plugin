@@ -10,16 +10,27 @@ public class Templates {
 
     static final SimpleTemplateEngine templateEngine = new SimpleTemplateEngine()
 
-    public static String buildLicenseHtml(LibraryInfo library) {
-        assertLicense(library)
-
+    static String buildLicenseHtml(LibraryInfo library) {
         def templateFile = "template/licenses/${library.normalizedLicense}.html"
         return templateEngine.createTemplate(readResourceContent(templateFile)).make([
                 "library": library
         ])
     }
 
-    public static void assertLicense(LibraryInfo library) {
+    public static String buildLibraryHtml(LibraryInfo library) {
+        assertLibraryHasEnoughInformation(library)
+
+        def templateFile = "template/library.html"
+        return templateEngine.createTemplate(readResourceContent(templateFile)).make([
+                "name": library.name,
+                "license": makeIndent(buildLicenseHtml(library), 4)
+        ])
+    }
+
+    public static void assertLibraryHasEnoughInformation(LibraryInfo library) {
+        if (!library.name) {
+            throw new NotEnoughInformationException(library)
+        }
         if (!library.license) {
             throw new NotEnoughInformationException(library)
         }
