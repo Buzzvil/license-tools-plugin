@@ -23,6 +23,7 @@ public class Templates {
         def templateFile = "template/library.html"
         return templateEngine.createTemplate(readResourceContent(templateFile)).make([
                 "name": library.name,
+                "noticeUrl": library.noticeUrl,
                 "license": makeIndent(buildLicenseHtml(library), 4)
         ])
     }

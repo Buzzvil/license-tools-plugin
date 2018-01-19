@@ -1,4 +1,5 @@
 <div class="library">
     <h1 class="title">${name}</h1>
+    <% print noticeUrl.isEmpty() ? "" : """<p class="notice_link"><a href="${noticeUrl}">NOTICE file of ${name}</a></p>""" %>
 ${license}
 </div>

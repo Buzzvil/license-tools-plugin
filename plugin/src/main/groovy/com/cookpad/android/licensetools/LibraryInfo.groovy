@@ -22,7 +22,9 @@ public class LibraryInfo implements Comparable<LibraryInfo> {
 
     boolean skip = false
 
-    String licenseBody = ''
+    String licenseBody = ""
+
+    String noticeUrl = ""
 
     // from libraries.yml
     public static LibraryInfo fromYaml(Object lib) {
@@ -45,7 +47,8 @@ public class LibraryInfo implements Comparable<LibraryInfo> {
         libraryInfo.notice = lib.notice as String
         libraryInfo.skip = lib.skip as boolean
         libraryInfo.url = lib.url as String
-        libraryInfo.licenseBody = lib.licenseBody as String
+        libraryInfo.licenseBody = lib.licenseBody ?: ""
+        libraryInfo.noticeUrl = lib.noticeUrl ?: ""
         return libraryInfo
     }
 
