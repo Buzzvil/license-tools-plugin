@@ -4,8 +4,8 @@
 
 * [서드파티 오픈소스 소프트웨어 라이센스 관리 가이드](guides/MANAGE_OSS_LICENSE_NOTICE_GUIDE.md)
 * [license-tools-plugin 설치 가이드](guides/INSTALL_GUIDE.md)
-* [licenses.yml 생성 가이드](guides/CREATE_LICENSES_YML_GUIDE.md)
-* [licenses.yml 변경 가이드](guides/LICENSES_YML_GUIDE.md)
+* [3rd_party_licenses.yml 생성 가이드](guides/CREATE_LICENSES_YML_GUIDE.md)
+* [3rd_party_licenses.yml 변경 가이드](guides/LICENSES_YML_GUIDE.md)
 * [Buzzvil에서 사용하기 위해 변경된 내역](CHANGES_BUZZVIL.md)
 
 아래는 [원본 프로젝트의 README 본문](https://github.com/cookpad/license-tools-plugin)입니다.

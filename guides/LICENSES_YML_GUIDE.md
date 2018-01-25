@@ -1,9 +1,9 @@
-# licenses.yml 변경 가이드
-여기서는 원하는 라이센스를 추가하거나, 변경하거나, 삭제하기 위해서 `licenses.yml` 파일을 변경하는 방법에 대해서 안내합니다.
+# 3rd_party_licenses.yml 변경 가이드
+여기서는 원하는 라이센스를 추가하거나, 변경하거나, 삭제하기 위해서 `3rd_party_licenses.yml` 파일을 변경하는 방법에 대해서 안내합니다.
 yml은 YAML 파일입니다. YAML의 문법에 대해서는 [스펙 문서](http://www.yaml.org/spec/)를 참고하거나, 위키피디아([한글](https://ko.m.wikipedia.org/wiki/YAML), [영문](https://en.wikipedia.org/wiki/YAML) 등의 문서를 참고하시기 바랍니다.
 
 ## 라이센스 해시 설명
-`licenses.yml` 파일은 각 라이센스를 해시로 하는 리스트로 구성되어 있습니다. 라이센스 해시에 대한 구체적인 예시는 아래와 같습니다.
+`3rd_party_licenses.yml` 파일은 각 라이센스를 해시로 하는 리스트로 구성되어 있습니다. 라이센스 해시에 대한 구체적인 예시는 아래와 같습니다.
 
 ```yml
 - artifact: com.google.code.gson:gson:+
